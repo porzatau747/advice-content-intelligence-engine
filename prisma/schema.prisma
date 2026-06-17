@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model CustomerPainPoint {
+  id                      String             @id @default(cuid())
+  rawText                 String
+  countSeen               Int?
+  relatedProductOrService String?
+  customerType            String?
+  urgencyLevel            String?
+  category                String?
+  status                  String             @default("pending") // pending, analyzed
+  createdAt               DateTime           @default(now())
+  updatedAt               DateTime           @updatedAt
+  analysis                PainPointAnalysis?
+}
+
+model PainPointAnalysis {
+  id                        String            @id @default(cuid())
+  customerPainPointId       String            @unique
+  customerPainPoint         CustomerPainPoint @relation(fields: [customerPainPointId], references: [id], onDelete: Cascade)
+  corePainPoint             String
+  hiddenFear                String
+  realCustomerNeed          String
+  productServiceOpportunity String
+  suitableContentAngle      String
+  verificationRisks         String
+  createdAt                 DateTime          @default(now())
+}
+
+model ExternalSignal {
+  id              String                  @id @default(cuid())
+  sourceType      String // youtube_api, google_trends
+  title           String
+  summary         String?
+  sourceUrl       String?
+  metrics         String? // JSON string: { views, likes, etc. }
+  relatedKeywords String? // JSON string array
+  status          String                  @default("saved") // saved, analyzed
+  fetchedAt       DateTime                @default(now())
+  createdAt       DateTime                @default(now())
+  analysis        ExternalSignalAnalysis?
+}
+
+model ExternalSignalAnalysis {
+  id                    String         @id @default(cuid())
+  externalSignalId      String         @unique
+  externalSignal        ExternalSignal @relation(fields: [externalSignalId], references: [id], onDelete: Cascade)
+  signalSummary         String
+  audienceRelevance     String
+  suggestedContentAngle String
+  possibleHooks         String // JSON string array
+  createdAt             DateTime       @default(now())
+}
+
+model StoryFormat {
+  id                   String     @id @default(cuid())
+  name                 String
+  structure            String
+  exampleHook          String
+  recommendedShotStyle String
+  createdAt            DateTime   @default(now())
+  clipIdeas            ClipIdea[]
+}
+
+model DailyBrief {
+  id                String     @id @default(cuid())
+  briefDate         DateTime
+  summary           String
+  customerInsight   String
+  painPointIds      String // JSON string array of IDs
+  externalSignalIds String // JSON string array of IDs
+  status            String     @default("draft") // draft, final
+  createdAt         DateTime   @default(now())
+  clipIdeas         ClipIdea[]
+}
+
+model ClipIdea {
+  id                    String      @id @default(cuid())
+  dailyBriefId          String
+  dailyBrief            DailyBrief  @relation(fields: [dailyBriefId], references: [id], onDelete: Cascade)
+  title                 String
+  hook                  String
+  selectedStoryFormatId String
+  selectedStoryFormat   StoryFormat @relation(fields: [selectedStoryFormatId], references: [id])
+  shotList              String // JSON string array
+  onScreenText          String
+  voiceOver             String
+  capcutStyle           String
+  caption               String
+  hashtags              String
+  difficulty            String // easy, medium, hard
+  cta                   String
+  verificationNeeded    Boolean     @default(false)
+  contentGoal           String // educate, product_conversion, repair_service
+  whyThisClipMatters    String      @default("")
+  createdAt             DateTime    @default(now())
+}

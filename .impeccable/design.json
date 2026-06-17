@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-17T06:50:00Z",
+  "title": "Design System: Advice Content Intelligence Engine",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Advice Blue", "canonical": "oklch(34.6% 0.17 264.4)", "tonalRamp": ["#172554", "#1e3a8a", "#1e40af", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#eff6ff"] },
+      "primary-light": { "role": "primary", "displayName": "Advice Light Blue", "canonical": "oklch(62.3% 0.2 254)", "tonalRamp": ["#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe", "#dbeafe"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Clean Background", "canonical": "oklch(100% 0 0)", "tonalRamp": ["#09090b", "#18181b", "#27272a", "#52525b", "#a1a1aa", "#e4e4e7", "#f4f4f5", "#ffffff"] },
+      "neutral-surface": { "role": "neutral", "displayName": "Desk Surface", "canonical": "oklch(97.3% 0.005 240)", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f8fafc"] },
+      "neutral-ink": { "role": "neutral", "displayName": "Pure Ink", "canonical": "oklch(12% 0.02 240)", "tonalRamp": ["#090d16", "#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1"] },
+      "border": { "role": "neutral", "displayName": "Clean Border", "canonical": "oklch(92% 0.005 240)", "tonalRamp": ["#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f1f5f9"] },
+      "accent": { "role": "accent", "displayName": "Action Accent", "canonical": "oklch(52.7% 0.24 260)", "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Title", "purpose": "หน้าแดชบอร์ดหลักและส่วนหัวหน้าจอที่เน้นความสำคัญสูงสุด" },
+      "body": { "displayName": "Body Text & Scripts", "purpose": "บทพูดสคริปต์สั้นของร้านค้าและเนื้อหาคำแนะนำหลัก" }
+    },
+    "shadows": [
+      { "name": "tactile-hover", "value": "0 4px 12px rgba(37, 99, 235, 0.15)", "purpose": "การตอบสนองเมื่อชี้นิ้วสัมผัสปุ่มแอคชันหลัก" }
+    ],
+    "motion": [
+      { "name": "fade-in", "value": "transition: opacity 0.2s ease-out", "purpose": "การเปลี่ยนสถานะหรือแสดงหน้าต่างป๊อปอัป" }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "640px" },
+      { "name": "tablet", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Advice Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "ปุ่มดำเนินการหลักสำหรับบันทึกปัญหา หรือสร้าง Daily Brief",
+      "html": "<button class=\"ds-btn-primary\">ดำเนินการหลัก</button>",
+      "css": ".ds-btn-primary { background-color: #2563eb; color: #ffffff; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; font-size: 16px; cursor: pointer; transition: background-color 0.2s, box-shadow 0.2s; } .ds-btn-primary:hover { background-color: #3b82f6; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15); }"
+    },
+    {
+      "name": "Desk Container Card",
+      "kind": "card",
+      "refersTo": "card-container",
+      "description": "การ์ดแผงควบคุมหลักสำหรับครอบส่วนข้อมูลปัญหาหรือบทพูดสคริปต์",
+      "html": "<div class=\"ds-card-container\"><h3>หัวข้อข้อมูล</h3><p>เนื้อหาบทพูดแบบย่อสำหรับเปิดอ่านที่เคาน์เตอร์</p></div>",
+      "css": ".ds-card-container { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; } .ds-card-container h3 { margin: 0 0 8px 0; color: #0f172a; font-size: 20px; font-weight: 700; } .ds-card-container p { margin: 0; color: #0f172a; font-size: 16px; line-height: 1.6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Advice Desk",
+    "overview": "ระบบดีไซน์นี้ได้แรงบันดาลใจจากความต้องการสะท้อนภาพลักษณ์ความน่าเชื่อถือและความเป็นมืออาชีพของพนักงานหน้าร้าน Advice สามร้อยยอด ขณะปฏิบัติงานหลังเคาน์เตอร์บริการ ออกแบบขึ้นมาเพื่ออำนวยความสะดวกให้พนักงานสแกนอ่านบทพูด สคริปต์ และปัญหาร้องเรียนของลูกค้าได้อย่างเป็นระเบียบ แม่นยำ และรวดเร็วที่สุด",
+    "keyCharacteristics": [
+      "Advice Identity: การจัดวางโครงสีน้ำเงินสว่างสลับขาวที่สะท้อนถึงแบรนด์ Advice",
+      "Tactile Comfort: ส่วนควบคุม ปุ่มกด และอินพุตมีความชัดเจน ขนาดใหญ่พอดีการใช้นิ้วสัมผัส และขอบโค้งมนปานกลาง",
+      "High Contrast: ตัวหนังสือบทพูดสีเข้มเด่นชัด ตัดกับพื้นหลังสีสว่างเพื่อให้อ่านง่ายที่สุด"
+    ],
+    "rules": [
+      { "name": "The 60-30-10 Rule", "body": "ใช้สีขาว/เทาอ่อนเป็นพื้นหลังรองรับพื้นที่ส่วนใหญ่ (60%), สีน้ำเงินเข้มในการวางเลย์เอาต์หลักและข้อความ (30%), และสีน้ำเงินสดใส Action Accent ในส่วนที่ต้องการกระตุ้นการโต้ตอบหรือสถานะสำคัญไม่เกิน (10%) ของหน้าจอ", "section": "colors" },
+      { "name": "The Contrast Guard Rule", "body": "ห้ามใช้ข้อความสีเทาอ่อนบนพื้นหลังขาวเป็นอันขาด สีของตัวหนังสือบทพูดทั้งหมดจะต้องใช้ Pure Ink (#0f172a) เสมอเพื่อให้สอดคล้องกับมาตรฐานการอ่านง่ายหน้าร้าน", "section": "colors" },
+      { "name": "The Script Line Rule", "body": "ข้อความบทพูดที่พนักงานต้องอ่านออกเสียงจะต้องมีขนาดขั้นต่ำ (16px) และมีระยะห่างระหว่างบรรทัด (1.6) เสมอเพื่อให้อ่านได้ทันทีโดยไม่สับสนระหว่างบรรทัด", "section": "typography" }
+    ],
+    "dos": [
+      "Do ใช้ระดับสีตัวอักษรที่มี Contrast สูงสุด Pure Ink (#0f172a) บนพื้นหลังสว่าง",
+      "Do จำกัดบรรทัดของบทพูดสคริปต์สั้นให้มีความกว้างสูงสุดไม่เกิน 75ch เพื่อความสะดวกในการสแกนสายตา",
+      "Do ออกแบบคอมโพเนนต์ต่างๆ ให้รองรับการกดสัมผัสได้ง่ายบนอุปกรณ์แท็บเล็ตและมือถือ"
+    ],
+    "donts": [
+      "Don't ใช้ดีไซน์ประเภท Dark mode มืดทึบที่มองเห็นยากภายใต้สภาพแสงสะท้อนของหลอดไฟหน้าร้าน",
+      "Don't ใส่เอฟเฟกต์สีรุ้ง ไล่สีตัวอักษร (Gradient Text) หรือเอฟเฟกต์ Glassmorphic สะท้อนแสงฟุ่มเฟือย",
+      "Don't จัดกลุ่มการ์ดหรือแผงข้อมูลซ้อนกันหลายชั้น (Nested Cards) จนสร้างความสับสน"
+    ]
+  }
+}

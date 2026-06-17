@@ -42,6 +42,7 @@ export type CustomerPainPointMinAggregateOutputType = {
   customerType: string | null
   urgencyLevel: string | null
   category: string | null
+  nescenTicketId: string | null
   status: string | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -55,6 +56,7 @@ export type CustomerPainPointMaxAggregateOutputType = {
   customerType: string | null
   urgencyLevel: string | null
   category: string | null
+  nescenTicketId: string | null
   status: string | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -68,6 +70,7 @@ export type CustomerPainPointCountAggregateOutputType = {
   customerType: number
   urgencyLevel: number
   category: number
+  nescenTicketId: number
   status: number
   createdAt: number
   updatedAt: number
@@ -91,6 +94,7 @@ export type CustomerPainPointMinAggregateInputType = {
   customerType?: true
   urgencyLevel?: true
   category?: true
+  nescenTicketId?: true
   status?: true
   createdAt?: true
   updatedAt?: true
@@ -104,6 +108,7 @@ export type CustomerPainPointMaxAggregateInputType = {
   customerType?: true
   urgencyLevel?: true
   category?: true
+  nescenTicketId?: true
   status?: true
   createdAt?: true
   updatedAt?: true
@@ -117,6 +122,7 @@ export type CustomerPainPointCountAggregateInputType = {
   customerType?: true
   urgencyLevel?: true
   category?: true
+  nescenTicketId?: true
   status?: true
   createdAt?: true
   updatedAt?: true
@@ -217,6 +223,7 @@ export type CustomerPainPointGroupByOutputType = {
   customerType: string | null
   urgencyLevel: string | null
   category: string | null
+  nescenTicketId: string | null
   status: string
   createdAt: Date
   updatedAt: Date
@@ -253,6 +260,7 @@ export type CustomerPainPointWhereInput = {
   customerType?: Prisma.StringNullableFilter<"CustomerPainPoint"> | string | null
   urgencyLevel?: Prisma.StringNullableFilter<"CustomerPainPoint"> | string | null
   category?: Prisma.StringNullableFilter<"CustomerPainPoint"> | string | null
+  nescenTicketId?: Prisma.StringNullableFilter<"CustomerPainPoint"> | string | null
   status?: Prisma.StringFilter<"CustomerPainPoint"> | string
   createdAt?: Prisma.DateTimeFilter<"CustomerPainPoint"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"CustomerPainPoint"> | Date | string
@@ -267,6 +275,7 @@ export type CustomerPainPointOrderByWithRelationInput = {
   customerType?: Prisma.SortOrderInput | Prisma.SortOrder
   urgencyLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   category?: Prisma.SortOrderInput | Prisma.SortOrder
+  nescenTicketId?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -275,6 +284,7 @@ export type CustomerPainPointOrderByWithRelationInput = {
 
 export type CustomerPainPointWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  nescenTicketId?: string
   AND?: Prisma.CustomerPainPointWhereInput | Prisma.CustomerPainPointWhereInput[]
   OR?: Prisma.CustomerPainPointWhereInput[]
   NOT?: Prisma.CustomerPainPointWhereInput | Prisma.CustomerPainPointWhereInput[]
@@ -288,7 +298,7 @@ export type CustomerPainPointWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"CustomerPainPoint"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"CustomerPainPoint"> | Date | string
   analysis?: Prisma.XOR<Prisma.PainPointAnalysisNullableScalarRelationFilter, Prisma.PainPointAnalysisWhereInput> | null
-}, "id">
+}, "id" | "nescenTicketId">
 
 export type CustomerPainPointOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -298,6 +308,7 @@ export type CustomerPainPointOrderByWithAggregationInput = {
   customerType?: Prisma.SortOrderInput | Prisma.SortOrder
   urgencyLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   category?: Prisma.SortOrderInput | Prisma.SortOrder
+  nescenTicketId?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -319,6 +330,7 @@ export type CustomerPainPointScalarWhereWithAggregatesInput = {
   customerType?: Prisma.StringNullableWithAggregatesFilter<"CustomerPainPoint"> | string | null
   urgencyLevel?: Prisma.StringNullableWithAggregatesFilter<"CustomerPainPoint"> | string | null
   category?: Prisma.StringNullableWithAggregatesFilter<"CustomerPainPoint"> | string | null
+  nescenTicketId?: Prisma.StringNullableWithAggregatesFilter<"CustomerPainPoint"> | string | null
   status?: Prisma.StringWithAggregatesFilter<"CustomerPainPoint"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"CustomerPainPoint"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"CustomerPainPoint"> | Date | string
@@ -332,6 +344,7 @@ export type CustomerPainPointCreateInput = {
   customerType?: string | null
   urgencyLevel?: string | null
   category?: string | null
+  nescenTicketId?: string | null
   status?: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -346,6 +359,7 @@ export type CustomerPainPointUncheckedCreateInput = {
   customerType?: string | null
   urgencyLevel?: string | null
   category?: string | null
+  nescenTicketId?: string | null
   status?: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -360,6 +374,7 @@ export type CustomerPainPointUpdateInput = {
   customerType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   urgencyLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nescenTicketId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -374,6 +389,7 @@ export type CustomerPainPointUncheckedUpdateInput = {
   customerType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   urgencyLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nescenTicketId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -388,6 +404,7 @@ export type CustomerPainPointCreateManyInput = {
   customerType?: string | null
   urgencyLevel?: string | null
   category?: string | null
+  nescenTicketId?: string | null
   status?: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -401,6 +418,7 @@ export type CustomerPainPointUpdateManyMutationInput = {
   customerType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   urgencyLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nescenTicketId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -414,6 +432,7 @@ export type CustomerPainPointUncheckedUpdateManyInput = {
   customerType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   urgencyLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nescenTicketId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -427,6 +446,7 @@ export type CustomerPainPointCountOrderByAggregateInput = {
   customerType?: Prisma.SortOrder
   urgencyLevel?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  nescenTicketId?: Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -444,6 +464,7 @@ export type CustomerPainPointMaxOrderByAggregateInput = {
   customerType?: Prisma.SortOrder
   urgencyLevel?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  nescenTicketId?: Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -457,6 +478,7 @@ export type CustomerPainPointMinOrderByAggregateInput = {
   customerType?: Prisma.SortOrder
   urgencyLevel?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  nescenTicketId?: Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -513,6 +535,7 @@ export type CustomerPainPointCreateWithoutAnalysisInput = {
   customerType?: string | null
   urgencyLevel?: string | null
   category?: string | null
+  nescenTicketId?: string | null
   status?: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -526,6 +549,7 @@ export type CustomerPainPointUncheckedCreateWithoutAnalysisInput = {
   customerType?: string | null
   urgencyLevel?: string | null
   category?: string | null
+  nescenTicketId?: string | null
   status?: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -555,6 +579,7 @@ export type CustomerPainPointUpdateWithoutAnalysisInput = {
   customerType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   urgencyLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nescenTicketId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -568,6 +593,7 @@ export type CustomerPainPointUncheckedUpdateWithoutAnalysisInput = {
   customerType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   urgencyLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nescenTicketId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -583,6 +609,7 @@ export type CustomerPainPointSelect<ExtArgs extends runtime.Types.Extensions.Int
   customerType?: boolean
   urgencyLevel?: boolean
   category?: boolean
+  nescenTicketId?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -597,6 +624,7 @@ export type CustomerPainPointSelectCreateManyAndReturn<ExtArgs extends runtime.T
   customerType?: boolean
   urgencyLevel?: boolean
   category?: boolean
+  nescenTicketId?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -610,6 +638,7 @@ export type CustomerPainPointSelectUpdateManyAndReturn<ExtArgs extends runtime.T
   customerType?: boolean
   urgencyLevel?: boolean
   category?: boolean
+  nescenTicketId?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -623,12 +652,13 @@ export type CustomerPainPointSelectScalar = {
   customerType?: boolean
   urgencyLevel?: boolean
   category?: boolean
+  nescenTicketId?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type CustomerPainPointOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "rawText" | "countSeen" | "relatedProductOrService" | "customerType" | "urgencyLevel" | "category" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["customerPainPoint"]>
+export type CustomerPainPointOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "rawText" | "countSeen" | "relatedProductOrService" | "customerType" | "urgencyLevel" | "category" | "nescenTicketId" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["customerPainPoint"]>
 export type CustomerPainPointInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   analysis?: boolean | Prisma.CustomerPainPoint$analysisArgs<ExtArgs>
 }
@@ -648,6 +678,7 @@ export type $CustomerPainPointPayload<ExtArgs extends runtime.Types.Extensions.I
     customerType: string | null
     urgencyLevel: string | null
     category: string | null
+    nescenTicketId: string | null
     status: string
     createdAt: Date
     updatedAt: Date
@@ -1082,6 +1113,7 @@ export interface CustomerPainPointFieldRefs {
   readonly customerType: Prisma.FieldRef<"CustomerPainPoint", 'String'>
   readonly urgencyLevel: Prisma.FieldRef<"CustomerPainPoint", 'String'>
   readonly category: Prisma.FieldRef<"CustomerPainPoint", 'String'>
+  readonly nescenTicketId: Prisma.FieldRef<"CustomerPainPoint", 'String'>
   readonly status: Prisma.FieldRef<"CustomerPainPoint", 'String'>
   readonly createdAt: Prisma.FieldRef<"CustomerPainPoint", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"CustomerPainPoint", 'DateTime'>

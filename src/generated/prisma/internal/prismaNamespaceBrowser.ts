@@ -81,6 +81,7 @@ export const CustomerPainPointScalarFieldEnum = {
   customerType: 'customerType',
   urgencyLevel: 'urgencyLevel',
   category: 'category',
+  nescenTicketId: 'nescenTicketId',
   status: 'status',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

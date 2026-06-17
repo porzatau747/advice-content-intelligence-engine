@@ -15,6 +15,7 @@ model CustomerPainPoint {
   customerType            String?
   urgencyLevel            String?
   category                String?
+  nescenTicketId          String?            @unique // NESCEN work_dtl_id for duplicate prevention
   status                  String             @default("pending") // pending, analyzed
   createdAt               DateTime           @default(now())
   updatedAt               DateTime           @updatedAt

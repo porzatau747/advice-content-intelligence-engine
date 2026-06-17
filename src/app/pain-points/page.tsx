@@ -167,13 +167,22 @@ export default function PainPointsList() {
             รายการคำถาม ปัญหาจริงที่เจอ ณ จุดขาย/ช่างซ่อม และผลการวิเคราะห์เจาะลึกจิตวิทยาความกังวล
           </p>
         </div>
-        <Link
-          href="/pain-points/new"
-          className="flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-sm font-bold text-white border border-blue-500/20 transition-all duration-200 cursor-pointer shadow-md shadow-blue-600/10"
-        >
-          <Plus className="w-4 h-4" />
-          <span>เพิ่มปัญหาใหม่</span>
-        </Link>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+          <Link
+            href="/pain-points/import"
+            className="flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:bg-zinc-850 hover:text-white hover:border-zinc-700 active:scale-[0.98] text-sm font-bold text-zinc-300 transition-all duration-200 cursor-pointer shadow-md"
+          >
+            <Sparkles className="w-4 h-4 text-blue-400" />
+            <span>นำเข้าจากระบบงานซ่อม</span>
+          </Link>
+          <Link
+            href="/pain-points/new"
+            className="flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-sm font-bold text-white border border-blue-500/20 transition-all duration-200 cursor-pointer shadow-md shadow-blue-600/10"
+          >
+            <Plus className="w-4 h-4" />
+            <span>เพิ่มปัญหาใหม่</span>
+          </Link>
+        </div>
       </div>
 
       {/* Filter and Search Bar */}

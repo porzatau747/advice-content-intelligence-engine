@@ -103,3 +103,46 @@ model ClipIdea {
   whyThisClipMatters    String      @default("")
   createdAt             DateTime    @default(now())
 }
+
+model StockItem {
+  id          String   @id @default(cuid())
+  productCode String   @unique // Advice Product Code / Barcode
+  productName String
+  category    String
+  brand       String
+  quantity    Int
+  cost        Float
+  price       Float
+  margin      Float
+  daysInStock Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SalesRecord {
+  id            String   @id @default(cuid())
+  invoiceNo     String
+  productCode   String
+  productName   String
+  quantity      Int
+  price         Float
+  cost          Float
+  totalSales    Float
+  totalProfit   Float
+  customerName  String?
+  customerPhone String?
+  salesDate     DateTime
+  createdAt     DateTime @default(now())
+}
+
+model CustomerMovement {
+  id             String   @id @default(cuid())
+  customerPhone  String
+  customerName   String?
+  actionType     String // purchase, repair_request, inquiry
+  description    String
+  nescenTicketId String?
+  amount         Float?
+  timestamp      DateTime @default(now())
+  createdAt      DateTime @default(now())
+}

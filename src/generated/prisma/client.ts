@@ -76,3 +76,18 @@ export type DailyBrief = Prisma.DailyBriefModel
  * 
  */
 export type ClipIdea = Prisma.ClipIdeaModel
+/**
+ * Model StockItem
+ * 
+ */
+export type StockItem = Prisma.StockItemModel
+/**
+ * Model SalesRecord
+ * 
+ */
+export type SalesRecord = Prisma.SalesRecordModel
+/**
+ * Model CustomerMovement
+ * 
+ */
+export type CustomerMovement = Prisma.CustomerMovementModel

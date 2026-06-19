@@ -57,7 +57,10 @@ export const ModelName = {
   ExternalSignalAnalysis: 'ExternalSignalAnalysis',
   StoryFormat: 'StoryFormat',
   DailyBrief: 'DailyBrief',
-  ClipIdea: 'ClipIdea'
+  ClipIdea: 'ClipIdea',
+  StockItem: 'StockItem',
+  SalesRecord: 'SalesRecord',
+  CustomerMovement: 'CustomerMovement'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -181,6 +184,58 @@ export const ClipIdeaScalarFieldEnum = {
 } as const
 
 export type ClipIdeaScalarFieldEnum = (typeof ClipIdeaScalarFieldEnum)[keyof typeof ClipIdeaScalarFieldEnum]
+
+
+export const StockItemScalarFieldEnum = {
+  id: 'id',
+  productCode: 'productCode',
+  productName: 'productName',
+  category: 'category',
+  brand: 'brand',
+  quantity: 'quantity',
+  cost: 'cost',
+  price: 'price',
+  margin: 'margin',
+  daysInStock: 'daysInStock',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StockItemScalarFieldEnum = (typeof StockItemScalarFieldEnum)[keyof typeof StockItemScalarFieldEnum]
+
+
+export const SalesRecordScalarFieldEnum = {
+  id: 'id',
+  invoiceNo: 'invoiceNo',
+  productCode: 'productCode',
+  productName: 'productName',
+  quantity: 'quantity',
+  price: 'price',
+  cost: 'cost',
+  totalSales: 'totalSales',
+  totalProfit: 'totalProfit',
+  customerName: 'customerName',
+  customerPhone: 'customerPhone',
+  salesDate: 'salesDate',
+  createdAt: 'createdAt'
+} as const
+
+export type SalesRecordScalarFieldEnum = (typeof SalesRecordScalarFieldEnum)[keyof typeof SalesRecordScalarFieldEnum]
+
+
+export const CustomerMovementScalarFieldEnum = {
+  id: 'id',
+  customerPhone: 'customerPhone',
+  customerName: 'customerName',
+  actionType: 'actionType',
+  description: 'description',
+  nescenTicketId: 'nescenTicketId',
+  amount: 'amount',
+  timestamp: 'timestamp',
+  createdAt: 'createdAt'
+} as const
+
+export type CustomerMovementScalarFieldEnum = (typeof CustomerMovementScalarFieldEnum)[keyof typeof CustomerMovementScalarFieldEnum]
 
 
 export const SortOrder = {
